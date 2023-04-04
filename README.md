@@ -2,7 +2,7 @@
 
 Shuffle is a generator and Injector of Shellcode.
 In this tool you will find a Shellcode Injector, Generator, a Disassembler, and a few templates to use.
-For more cool shit use this link: https://github.com/pN0vA
+For more cool stuff use this link: https://github.com/pN0vA
 # [INSTALLATION]
 
 In your terminal put without the quotes "chmod +x install.sh && chmod +x run.sh"
