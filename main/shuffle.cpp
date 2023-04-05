@@ -92,7 +92,7 @@ int main() {
                   /_/                             
       )";
       cout << TEMP;
-      system("g++ templates/open.c -o open");
+      system("g++ templates/open.cpp -o open");
       system("./open");
     }else if (choice == 1337) {
       const string leet = R"(
