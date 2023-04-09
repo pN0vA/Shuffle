@@ -19,7 +19,7 @@ int main() {
     cout << ART;
     //choice number 1337 is a secret mode
     int choice;
-    cout << "\nWhat do you want to do:\n 1.Shellcode Injector\n 2.Shellcode Generator\n 3.Shellcode Decoder\n 4.Shellcode Template\n 5.Exit Program\n\n :";
+    cout << "\nWhat do you want to do:\n 1.Shellcode Injector\n 2.Shellcode Generator\n 3.Shellcode Decoder\n 4.Shellcode Template\n 5.Metasploit Generator\n 6.Exit Program\n\n :";
     cin >> choice;
     if (choice == 1){
       const string BO = R"(
@@ -62,12 +62,35 @@ int main() {
                                                                                               
       )";
       cout << SH;
-      string stringz;
-      cout << "\nWhat is the string you want: ";
-      cin >> stringz;
-      system("g++ shellcode/shellgen.cpp -o shel");
-      system(("./shel " + stringz).c_str());
-      return 0;
+      int choice;
+      cout << "\nWhat One Do You Need Shellcode For:\n 1. Unix/Linux\n 2. Arm\n 3. Windows\n 4. Exit\n\n :";
+      cin >> choice;
+
+      if (choice == 1) {
+        string stringz;
+        cout << "\nWhat is the string you want: ";
+        cin >> stringz;
+        system("g++ shellcode/shellgen.cpp -o shel");
+        system(("./shel " + stringz).c_str());
+        return 0;
+      } else if (choice == 2){
+        string stringz;
+        cout << "\nWhat is the string you want: ";
+        cin >> stringz;
+        system("g++ -no-pie -Wall -Wextra -pedantic -std=c++11 -O3 -o shel shellcode/armgen.cpp");
+        system(("./shel " + stringz).c_str());
+        return 0;
+      } else if (choice == 3){
+        string stringz;
+        cout << "\nWhat is the string you want: ";
+        cin >> stringz;
+        system("g++ shellcode/wingen.cpp -o shel");
+        system(("./shel " + stringz).c_str());
+        return 0;
+      }else if (choice == 4){
+        exit(3);
+      }
+      
 
     }else if (choice == 3) {
       const string DEC = R"(
@@ -94,7 +117,21 @@ int main() {
       cout << TEMP;
       system("g++ templates/open.cpp -o open");
       system("./open");
-    }else if (choice == 1337) {
+    }else if (choice == 5){
+      const string MET = R"(
+    __  ___     __                   __      _ __     ______                           __            
+   /  |/  /__  / /_____ __________  / /___  (_) /_   / ____/__  ____  ___  _________ _/ /_____  _____
+  / /|_/ / _ \/ __/ __ `/ ___/ __ \/ / __ \/ / __/  / / __/ _ \/ __ \/ _ \/ ___/ __ `/ __/ __ \/ ___/
+ / /  / /  __/ /_/ /_/ (__  ) /_/ / / /_/ / / /_   / /_/ /  __/ / / /  __/ /  / /_/ / /_/ /_/ / /    
+/_/  /_/\___/\__/\__,_/____/ .___/_/\____/_/\__/   \____/\___/_/ /_/\___/_/   \__,_/\__/\____/_/     
+                          /_/                                                                       
+      )";     
+      cout << MET;
+      string payload;
+      cout << "\n\nWhat is the metasploit payload: \n\n:";
+      cin >> payload;
+      system(("sudo msfvenom -p" + payload + " --format c").c_str());
+      }else if (choice == 1337) {
       const string leet = R"(
   ________            _____                     __ 
  /_  __/ /_  ___     / ___/___  _____________  / /_
@@ -144,5 +181,7 @@ int main() {
           exit(3);
         }
       }
+    }else if (choice == 6){
+      exit(3);
     }
 }
