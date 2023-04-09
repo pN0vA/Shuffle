@@ -20,7 +20,9 @@ https://www.sentinelone.com/blog/malicious-input-how-hackers-use-shellcode/
 # INSTALLATION
 
 In your terminal put without the quotes "chmod +x install.sh && chmod +x run.sh"
+
 Now run "./install.sh" Then run "./run.sh"
+
 You should now be good to go! ENJOY!
 
 # Disclaimer
