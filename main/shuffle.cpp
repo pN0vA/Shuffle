@@ -19,7 +19,7 @@ int main() {
     cout << ART;
     //choice number 1337 is a secret mode
     int choice;
-    cout << "\nWhat do you want to do:\n 1.Shellcode Injector\n 2.Shellcode Generator\n 3.Shellcode Decoder\n 4.Shellcode Template\n 5.Metasploit Generator\n 6.Exit Program\n\n :";
+    cout << "\nWhat do you want to do:\n 1.Shellcode Injector\n 2.Shellcode Generator\n 3.Shellcode Decoder\n 4.Shellcode Template\n 5.Metasploit Generator\n 6.File Compiler\n 7.Exit Program\n\n :";
     cin >> choice;
     if (choice == 1){
       const string BO = R"(
@@ -131,6 +131,32 @@ int main() {
       cout << "\n\nWhat is the metasploit payload: \n\n:";
       cin >> payload;
       system(("sudo msfvenom -p" + payload + " --format c").c_str());
+      }else if (choice == 6){
+        const string FC = R"(
+    _______ __        ______                      _ __         
+   / ____(_) /__     / ____/___  ____ ___  ____  (_) /__  _____
+  / /_  / / / _ \   / /   / __ \/ __ `__ \/ __ \/ / / _ \/ ___/
+ / __/ / / /  __/  / /___/ /_/ / / / / / / /_/ / / /  __/ /    
+/_/   /_/_/\___/   \____/\____/_/ /_/ /_/ .___/_/_/\___/_/     
+                                       /_/                     
+        )";
+
+        cout << FC;
+        string file;
+        cout << "\n\n What is the name of the File: \n\n:";
+        cin >> file;
+        string name;
+        cout << "What would you like to name the executable: \n:";
+        cin >> name;
+        system(("g++ " + file + " -o " + name).c_str());
+        string elsa;
+        cout << "Would you like to run the file(y/n): ";
+        cin >> elsa;
+        if (elsa == "y"){
+          system(("./"+ name).c_str());
+        }else if (elsa == "n"){
+          exit(3);
+        }
       }else if (choice == 1337) {
       const string leet = R"(
   ________            _____                     __ 
