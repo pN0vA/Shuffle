@@ -127,10 +127,21 @@ int main() {
                           /_/                                                                       
       )";     
       cout << MET;
+      cout << "\nPut options in the format selection bar to see the selection.\n";
+      string format;
+      cout << "\nWhich would you like the shellcode to format to:\n\n :";
+      cin >> format;
+      if (format == "options"){
+        cout << "\nYour options:\n 1. c\n 2.rust\n 3.python\n 4.java\n 5.golang\n 6.bash\n 7.hex\n 8.vbscript\n 9.exe\n 10.dll\n 11.msi\n 12.ducky-script-psh\n 13.elf\n 14.asp\n 15.psh\n 16.psh-cmd\n 17.vba\n 18.csharp\n 19.axis2\n 20.jar\n 21.jsp\n 22.js_be (big endian)\n 23.js_le (little endian)\n 24.ruby\n";
+        return 0;
+      }
       string payload;
-      cout << "\n\nWhat is the metasploit payload: \n\n:";
+      cout << "\nWhat is the metasploit payload: \n\n:";
       cin >> payload;
-      system(("sudo msfvenom -p" + payload + " --format c").c_str());
+      
+      system(("sudo msfvenom -p" + payload + " --format " + format).c_str());
+      return 0;
+      
       }else if (choice == 6){
         const string FC = R"(
     _______ __        ______                      _ __         
