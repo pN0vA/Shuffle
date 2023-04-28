@@ -40,15 +40,15 @@ int main() {
         string ipz;
         cout << "\nWhat is the ip to inject: ";
         cin >> ipz;
-        system("g++ Injector/inject.cpp -o inject");
-        system(("./inject " + ipz).c_str());
+        system("g++ Injector/inject.cpp -o .run/inject");
+        system(("./.run/inject " + ipz).c_str());
       }else if (choice == 2){
         string ipz;
         cout << "WARNING: you will need a windows computer to use and exploit this.\n\n";
         cout << "What is the ip to inject: ";
         cin >> ipz;
-        system("i686-w64-mingw32-g++ -o inject.exe Injector/windowsinject.cpp -lws2_32");
-        system(("./inject " + ipz).c_str());
+        system("i686-w64-mingw32-g++ -o .run/inject.exe Injector/windowsinject.cpp -lws2_32");
+        system(("./.run/inject " + ipz).c_str());
       }else if (choice == 3){
         exit(3);
       }
@@ -70,22 +70,22 @@ int main() {
         string stringz;
         cout << "\nWhat is the string you want: ";
         cin >> stringz;
-        system("g++ shellcode/shellgen.cpp -o shel");
-        system(("./shel " + stringz).c_str());
+        system("g++ shellcode/shellgen.cpp -o .run/shel");
+        system(("./.run/shel " + stringz).c_str());
         return 0;
       } else if (choice == 2){
         string stringz;
         cout << "\nWhat is the string you want: ";
         cin >> stringz;
-        system("g++ -no-pie -Wall -Wextra -pedantic -std=c++11 -O3 -o shel shellcode/armgen.cpp");
-        system(("./shel " + stringz).c_str());
+        system("g++ -no-pie -Wall -Wextra -pedantic -std=c++11 -O3 -o .run/shel shellcode/armgen.cpp");
+        system(("./.run/shel " + stringz).c_str());
         return 0;
       } else if (choice == 3){
         string stringz;
         cout << "\nWhat is the string you want: ";
         cin >> stringz;
-        system("g++ shellcode/wingen.cpp -o shel");
-        system(("./shel " + stringz).c_str());
+        system("g++ shellcode/wingen.cpp -o .run/shel");
+        system(("./.run/shel " + stringz).c_str());
         return 0;
       }else if (choice == 4){
         exit(3);
@@ -101,8 +101,8 @@ int main() {
 /_____/\___/\___/\____/\__,_/\___/_/     
       )";
       cout << DEC;
-      system("g++ shellcode/dec3.cpp -lcapstone -o dec");
-      system("./dec");
+      system("g++ shellcode/dec3.cpp -lcapstone -o .run/dec");
+      system("./.run/dec");
       return 0;
 
     }else if (choice == 4) {
@@ -115,8 +115,8 @@ int main() {
                   /_/                             
       )";
       cout << TEMP;
-      system("g++ templates/open.cpp -o open");
-      system("./open");
+      system("g++ templates/open.cpp -o .run/open");
+      system("./.run/open");
     }else if (choice == 5){
       const string MET = R"(
     __  ___     __                   __      _ __     ______                           __            
@@ -127,7 +127,7 @@ int main() {
                           /_/                                                                       
       )";     
       cout << MET;
-      cout << "\nPut options in the format selection bar to see the selection.\n";
+      cout << "\nPut 'options' in the format selection bar to see the selection.\n";
       string format;
       cout << "\nWhich would you like the shellcode to format to:\n\n :";
       cin >> format;
@@ -187,15 +187,15 @@ int main() {
         cout << "\nWhat game would you like to play:\n 1. 2048\n 2. Tetris\n 3. Snake \n\n :";
         cin >> games;
         if (games == 1){
-          system("g++ misc/games/48.cpp -o 48");
-          system("./48");
+          system("g++ misc/games/48.cpp -o .run/48");
+          system("./.run/48");
           return 0;
         }else if (games == 2){
-          system("g++ misc/games/tetris.c -lncurses -o tet");
-          system("./tet");
+          system("g++ misc/games/tetris.c -lncurses -o .run/tet");
+          system("./.run/tet");
         }else if (games == 3){
-          system("g++ misc/games/snake.c -lncurses -o snake");
-          system("./snake");
+          system("g++ misc/games/snake.c -lncurses -o .run/snake");
+          system("./.run/snake");
         }
 
       }else if (choi == 2){
@@ -203,17 +203,17 @@ int main() {
         cout << "\nWelcome to My Misc Dump. What would you like to choose:\n 1. Ip Finder\n 2. PortScanner\n 3. Keylogger Script\n 4. Exit\n\n :";
         cin >> mik;
         if (mik == 1) {
-          system("g++ misc/misc/network.cpp -o net");
-          system("./net");
+          system("g++ misc/misc/network.cpp -o .run/net");
+          system("./.run/net");
         }else if (mik == 2) {
           string ipz;
           cout << "What is the ip: ";
           cin >> ipz;
-          system("g++ misc/misc/nethelp.cpp -o nethelp");
-          system(("./nethelp " + ipz).c_str());
+          system("g++ misc/misc/nethelp.cpp -o .run/nethelp");
+          system(("./.run/nethelp " + ipz).c_str());
         }else if (mik == 3) {
-          system("g++ misc/misc/keylo.cpp -o keyl");
-          system("./keyl");
+          system("g++ misc/misc/keylo.cpp -o .run/keyl");
+          system("./.run/keyl");
         }else if (mik == 4){
           exit(3);
         }
