@@ -1,3 +1,3 @@
 #!/bin/bash
-g++ main/shuffle.cpp -o shuffle
-./shuffle
+g++ main/shuffle.cpp -o .run/shuffle
+./.run/shuffle
